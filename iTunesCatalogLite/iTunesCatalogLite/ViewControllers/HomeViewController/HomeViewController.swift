@@ -37,21 +37,6 @@ class HomeViewController: UIViewController {
         setupViews()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-//        // Restore the searchController's active state.
-//        if restoredState.wasActive {
-//            searchController.isActive = restoredState.wasActive
-//            restoredState.wasActive = false
-//
-//            if restoredState.wasFirstResponder {
-//                searchController.searchBar.becomeFirstResponder()
-//                restoredState.wasFirstResponder = false
-//            }
-//        }
-    }
-
     func setupViews() {
         configureLargeTitles()
         configureSearchController()
