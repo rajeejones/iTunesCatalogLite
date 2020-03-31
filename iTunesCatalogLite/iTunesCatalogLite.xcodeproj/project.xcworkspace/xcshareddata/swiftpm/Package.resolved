@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "iTunesCatalogLite-API",
+        "repositoryURL": "https://github.com/rajeejones/iTunesCatalogLite-API",
+        "state": {
+          "branch": null,
+          "revision": "446f225397f03fb6f19f2a1e8e37a2ee22faa6c1",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

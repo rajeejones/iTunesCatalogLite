@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		C8A05D9B2433E7FA00FD2345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A05D9A2433E7FA00FD2345 /* Assets.xcassets */; };
 		C8A05D9E2433E7FA00FD2345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A05D9C2433E7FA00FD2345 /* LaunchScreen.storyboard */; };
 		C8A05DA92433E7FA00FD2345 /* iTunesCatalogLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A05DA82433E7FA00FD2345 /* iTunesCatalogLiteTests.swift */; };
+		C8A05DB52433E86C00FD2345 /* iTunesCatalogLite-API in Frameworks */ = {isa = PBXBuildFile; productRef = C8A05DB42433E86C00FD2345 /* iTunesCatalogLite-API */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8A05DB52433E86C00FD2345 /* iTunesCatalogLite-API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +117,9 @@
 			dependencies = (
 			);
 			name = iTunesCatalogLite;
+			packageProductDependencies = (
+				C8A05DB42433E86C00FD2345 /* iTunesCatalogLite-API */,
+			);
 			productName = iTunesCatalogLite;
 			productReference = C8A05D8E2433E7F700FD2345 /* iTunesCatalogLite.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +170,9 @@
 				Base,
 			);
 			mainGroup = C8A05D852433E7F700FD2345;
+			packageReferences = (
+				C8A05DB32433E86C00FD2345 /* XCRemoteSwiftPackageReference "iTunesCatalogLite-API" */,
+			);
 			productRefGroup = C8A05D8F2433E7F700FD2345 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -469,6 +477,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C8A05DB32433E86C00FD2345 /* XCRemoteSwiftPackageReference "iTunesCatalogLite-API" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rajeejones/iTunesCatalogLite-API";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C8A05DB42433E86C00FD2345 /* iTunesCatalogLite-API */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8A05DB32433E86C00FD2345 /* XCRemoteSwiftPackageReference "iTunesCatalogLite-API" */;
+			productName = "iTunesCatalogLite-API";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C8A05D862433E7F700FD2345 /* Project object */;
 }
