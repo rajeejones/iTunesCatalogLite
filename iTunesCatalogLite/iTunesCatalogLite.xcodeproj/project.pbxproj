@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C88D06D72433F56600803620 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06D62433F56600803620 /* StorageManager.swift */; };
 		C8A05D922433E7F700FD2345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A05D912433E7F700FD2345 /* AppDelegate.swift */; };
 		C8A05D942433E7F700FD2345 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A05D932433E7F700FD2345 /* SceneDelegate.swift */; };
 		C8A05D962433E7F700FD2345 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A05D952433E7F700FD2345 /* HomeViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C88D06D62433F56600803620 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		C8A05D8E2433E7F700FD2345 /* iTunesCatalogLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesCatalogLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A05D912433E7F700FD2345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8A05D932433E7F700FD2345 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				C8A05D932433E7F700FD2345 /* SceneDelegate.swift */,
 				C8A05DB72433EAED00FD2345 /* ViewControllers */,
 				C8A05DB62433E94D00FD2345 /* Supporting Files */,
+				C88D06D62433F56600803620 /* StorageManager.swift */,
 			);
 			path = iTunesCatalogLite;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				C8A05DBE2433EBCD00FD2345 /* ResultsTableViewController.swift in Sources */,
 				C8A05DC02433EC0500FD2345 /* DetailViewController.swift in Sources */,
 				C8A05D942433E7F700FD2345 /* SceneDelegate.swift in Sources */,
+				C88D06D72433F56600803620 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

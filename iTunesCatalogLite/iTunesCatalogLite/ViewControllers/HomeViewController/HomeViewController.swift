@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     var searchController: UISearchController = UISearchController()
     var resultsTableViewController: ResultsTableViewController = ResultsTableViewController()
     //var restoredState = SearchControllerRestorableState()
+    var favorites: [iTunesSearchResult] = []
 
     var searchScopes: [iTunesSearchRequest.SearchMedia] = [
         iTunesSearchRequest.SearchMedia.all,
@@ -35,6 +36,23 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        StorageManager.loadFavorites { [weak self] (results) in
+            guard let self = self,
+                let items = results else {
+                return
+            }
+
+            DispatchQueue.main.async {
+                self.favorites = items
+                self.containerCollectionView.reloadData()
+            }
+
+        }
     }
 
     func setupViews() {
@@ -104,7 +122,7 @@ extension HomeViewController: UICollectionViewDelegate {
 // MARK: - Favorites Collection View DataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return favorites.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -112,8 +130,8 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.itemNameLabel?.text = nil
-        cell.backgroundColor = .clear
+        cell.configure(favorites[indexPath.row])
+        
         return cell
     }
 }

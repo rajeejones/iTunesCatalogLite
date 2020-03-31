@@ -58,10 +58,25 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        if sender.state == .selected {
-            sender.imageView?.image = UIImage(systemName: "star.fill")
-        } else {
-            sender.imageView?.image = UIImage(systemName: "star")
+        StorageManager.favoriteItem(result) { [weak self] (success) in
+            self?.displayFavoritedAlert(itemSaved: success, completion: {
+                DispatchQueue.main.async {
+                    sender.imageView?.image = UIImage(systemName: success ? "star.fill" : "star")
+                }
+            })
+        }
+    }
+}
+
+extension DetailViewController {
+    func displayFavoritedAlert(itemSaved: Bool, completion: @escaping () -> Void ) {
+        DispatchQueue.main.async { [weak self] in
+            let title = itemSaved == true ? "Saved to Favorites" : nil
+            let message = itemSaved == true ? nil : "There was an issue saving, please try again"
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+            self?.present(alertController, animated: true, completion: completion)
         }
     }
 }
