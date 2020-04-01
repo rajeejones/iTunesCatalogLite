@@ -37,10 +37,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
         StorageManager.loadFavorites { [weak self] (results) in
             guard let self = self,
@@ -52,10 +48,8 @@ class HomeViewController: UIViewController {
                 self.favorites = items
                 self.favoritesCollectionView.reloadData()
             }
-
         }
     }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -85,6 +79,7 @@ class HomeViewController: UIViewController {
 
         resultsTableViewController = catalogResultsVC
         searchController = UISearchController(searchResultsController: resultsTableViewController)
+        searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.searchBar.backgroundImage = UIImage()
         searchController.searchBar.delegate = self
@@ -128,7 +123,7 @@ extension HomeViewController {
     }
 }
 
-// MARK: - UISearchBarDelegate & UISearchControllerDelegate
+// MARK: - UISearchBarDelegate
 
 extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -137,6 +132,24 @@ extension HomeViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         selectedScopeIndex = selectedScope
+    }
+}
+
+// MARK: - UISearchControllerDelegate
+
+extension HomeViewController: UISearchControllerDelegate {
+    func willDismissSearchController(_ searchController: UISearchController) {
+        StorageManager.loadFavorites { [weak self] (results) in
+            guard let self = self,
+                let items = results else {
+                return
+            }
+
+            DispatchQueue.main.async {
+                self.favorites = items
+                self.favoritesCollectionView.reloadData()
+            }
+        }
     }
 }
 
