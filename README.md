@@ -4,15 +4,8 @@ Lightweight iTunes Catalog Challenge
 Author: Rajee Jones 👋🏾
 jones.rajee@gmail.com
 
-## Swift Packages
-I created my API as a Swift Package to add as a dependency, also as apart of this challenge. 🤭
-[Lightweight iTunes Catalog API](https://github.com/rajeejones/iTunesCatalogLite-API)
-
-## Demo
-![Demo of iTunesChallenge](https://github.com/rajeejones/iTunesCatalogLite/blob/master/iTunesChallengeDemo.gif) 
-
 ## Challenge:
-- [x] Build an API that takes in a search term and uses that value to call the iTunes Search API.
+- [x] Build an API that takes in a search term and uses that value to call the [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
 - [x] The API that you build will take the iTunes Search API and sort each of the results into categories based on media type.
 - [x] The response of this API should be a JSON object, where each field are the different media types and inside each field is an array of objects
 - [x] Required fields: id, name, artwork, genre, url
@@ -23,3 +16,11 @@ I created my API as a Swift Package to add as a dependency, also as apart of thi
 - [x] Allow items to be marked as “favorites”
 - [x] These favorites can be a mix of different “kinds” of entities and should always be accessible on the page (even when no search has been entered)
 
+## Swift Packages
+- [Lightweight iTunes Catalog API](https://github.com/rajeejones/iTunesCatalogLite-API)
+
+I created my API as a Swift Package to add as a dependency 🤓
+
+
+## Demo
+![Demo of iTunesChallenge](https://github.com/rajeejones/iTunesCatalogLite/blob/master/iTunesChallengeDemo.gif) 
