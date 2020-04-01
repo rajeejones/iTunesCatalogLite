@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     var resultsTableViewController: ResultsTableViewController = ResultsTableViewController()
     //var restoredState = SearchControllerRestorableState()
     var favorites: [iTunesSearchResult] = []
+    var selectedItem: iTunesSearchResult? = nil
 
     var searchScopes: [iTunesSearchRequest.SearchMedia] = [
         iTunesSearchRequest.SearchMedia.all,
@@ -79,6 +80,16 @@ class HomeViewController: UIViewController {
 
         definesPresentationContext = true
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailSegue" {
+            guard let detailViewController = segue.destination as? DetailViewController else {
+                return
+            }
+
+            detailViewController.result = selectedItem
+        }
+    }
 }
 
 // MARK: - View Helpers
@@ -116,7 +127,11 @@ extension HomeViewController: UISearchBarDelegate {
 // MARK: - Favorites Collection View Delegate
 
 extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedItem = favorites[indexPath.row]
 
+        performSegue(withIdentifier: "showDetailSegue", sender: self)
+    }
 }
 
 // MARK: - Favorites Collection View DataSource

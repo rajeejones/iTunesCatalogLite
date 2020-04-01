@@ -18,11 +18,6 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var artworkImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var itunesButton: UIButton!
-
-    // MARK: - Variables
-
-    var itunesUrl: URL?
 
     // MARK: - Lifecycle
 
@@ -36,15 +31,12 @@ class ResultTableViewCell: UITableViewCell {
         artworkImageView.image = nil
         nameLabel.text = nil
         genreLabel.text = nil
-        itunesUrl = nil
     }
 
     func configure(_ result: iTunesSearchResult) {
         DispatchQueue.main.async {
             self.nameLabel.text = result.name
             self.genreLabel.text = result.genre
-            self.itunesUrl = URL(string: result.url)
-            self.itunesButton.isEnabled = self.itunesUrl != nil
 
             DispatchQueue.global().async {
                 guard let imageUrl = URL(string: result.artwork),
@@ -57,16 +49,5 @@ class ResultTableViewCell: UITableViewCell {
                 }
             }
         }
-    }
-
-    // MARK: - IBActions
-    
-    @IBAction func iTunesButtonTapped(_ sender: Any) {
-        guard let url = itunesUrl,
-            UIApplication.shared.canOpenURL(url) else {
-                return
-        }
-
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
 
     static let storyboardId = "DetailViewController"
     var result: iTunesSearchResult?
+    var iTunesUrl: URL?
 
     // MARK: - Outlets
 
@@ -22,14 +23,21 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var artworkImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var iTunesButton: UIButton!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         DispatchQueue.main.async {
-            self.titleLabel.text = self.result?.name
-            self.subtitleLabel.text = self.result?.genre
+            guard let result = self.result else {
+                // cant be here with no result
+                return
+            }
+            self.titleLabel.text = result.name
+            self.subtitleLabel.text = result.genre
+            self.iTunesUrl = URL(string: result.url)
+            self.iTunesButton.isEnabled = self.iTunesUrl != nil
 
             DispatchQueue.global().async {
                 guard let urlString = self.result?.artwork,
@@ -57,11 +65,23 @@ class DetailViewController: UIViewController {
         return viewController
     }
 
+    // MARK: - IBActions
+
+    @IBAction func iTunesButtonTapped(_ sender: Any) {
+        guard let url = iTunesUrl,
+            UIApplication.shared.canOpenURL(url) else {
+                return
+        }
+
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         StorageManager.favoriteItem(result) { [weak self] (success) in
             self?.displayFavoritedAlert(itemSaved: success, completion: {
                 DispatchQueue.main.async {
                     sender.imageView?.image = UIImage(systemName: success ? "star.fill" : "star")
+                    sender.setTitle(success ? "Favorite": "Unfavorite", for: .normal)
                 }
             })
         }
@@ -77,6 +97,17 @@ extension DetailViewController {
             alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
             self?.present(alertController, animated: true, completion: completion)
+        }
+    }
+
+    func displayLoadingAlert() {
+        DispatchQueue.main.async { [weak self] in
+            let alertController = UIAlertController(title: "Oops. There was an error loading the data", message: nil, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+            self?.present(alertController, animated: true, completion: {
+                self?.dismiss(animated: true, completion: nil)
+            })
         }
     }
 }

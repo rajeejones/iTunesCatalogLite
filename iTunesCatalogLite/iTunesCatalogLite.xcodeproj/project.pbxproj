@@ -101,9 +101,9 @@
 			children = (
 				C8A05D912433E7F700FD2345 /* AppDelegate.swift */,
 				C8A05D932433E7F700FD2345 /* SceneDelegate.swift */,
+				C88D06D62433F56600803620 /* StorageManager.swift */,
 				C8A05DB72433EAED00FD2345 /* ViewControllers */,
 				C8A05DB62433E94D00FD2345 /* Supporting Files */,
-				C88D06D62433F56600803620 /* StorageManager.swift */,
 			);
 			path = iTunesCatalogLite;
 			sourceTree = "<group>";

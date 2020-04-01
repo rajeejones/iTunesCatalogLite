@@ -71,6 +71,7 @@
                     <navigationItem key="navigationItem" title="iTunes Catalog" largeTitleDisplayMode="always" id="jpv-3a-YQk"/>
                     <connections>
                         <outlet property="containerCollectionView" destination="nZj-BU-rfk" id="mlr-bi-Rqg"/>
+                        <segue destination="3Kw-U0-1Hx" kind="presentation" identifier="showDetailSegue" id="aXz-Lg-1yK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -149,60 +150,74 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Kw-U0-1Hx" customClass="DetailViewController" customModule="iTunesCatalogLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uL8-BI-Kbn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcu-O8-645">
-                                <rect key="frame" x="348" y="64" width="46" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="Ly6-WR-zvq"/>
-                                    <constraint firstAttribute="width" constant="46" id="oB2-1E-o11"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="star" catalog="system"/>
-                                <state key="selected" image="star" catalog="system"/>
-                                <state key="highlighted" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="favoriteButtonTapped:" destination="3Kw-U0-1Hx" eventType="touchUpInside" id="vDW-1B-Sdr"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RWE-Xd-ELg">
-                                <rect key="frame" x="20" y="104" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="CCX-aQ-GxN"/>
-                                    <constraint firstAttribute="width" constant="100" id="mkD-IE-F9G"/>
+                                    <constraint firstAttribute="height" constant="200" id="CCX-aQ-GxN"/>
                                 </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iuj-1L-Gic">
-                                <rect key="frame" x="148" y="122.5" width="246" height="63.5"/>
+                                <rect key="frame" x="20" y="245" width="374" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi6-1I-KAb">
-                                        <rect key="frame" x="0.0" y="0.0" width="246" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnx-KR-Glf">
-                                        <rect key="frame" x="0.0" y="49" width="246" height="14.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <rect key="frame" x="0.0" y="49" width="374" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P34-oP-i5T">
+                                <rect key="frame" x="20" y="328" width="374" height="47"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcu-O8-645">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="Ly6-WR-zvq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="-17" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Favorite" image="star" catalog="system">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="star" catalog="system"/>
+                                        <state key="highlighted" image="star.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="favoriteButtonTapped:" destination="3Kw-U0-1Hx" eventType="touchUpInside" id="vDW-1B-Sdr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0p-py-ug4">
+                                        <rect key="frame" x="187" y="5.5" width="187" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="View on iTunes"/>
+                                        <connections>
+                                            <action selector="iTunesButtonTapped:" destination="3Kw-U0-1Hx" eventType="touchUpInside" id="F7L-O1-yDf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="RWE-Xd-ELg" firstAttribute="top" secondItem="R5n-Q2-eP7" secondAttribute="top" constant="60" id="14b-1e-3eh"/>
-                            <constraint firstItem="iuj-1L-Gic" firstAttribute="leading" secondItem="RWE-Xd-ELg" secondAttribute="trailing" constant="28" id="5fz-uj-ipP"/>
-                            <constraint firstItem="RWE-Xd-ELg" firstAttribute="leading" secondItem="R5n-Q2-eP7" secondAttribute="leading" constant="20" id="6Yc-ZC-iVw"/>
-                            <constraint firstItem="R5n-Q2-eP7" firstAttribute="trailing" secondItem="iuj-1L-Gic" secondAttribute="trailing" constant="20" id="6yJ-Q7-WYZ"/>
-                            <constraint firstItem="iuj-1L-Gic" firstAttribute="centerY" secondItem="RWE-Xd-ELg" secondAttribute="centerY" id="A5i-lN-7EN"/>
-                            <constraint firstItem="R5n-Q2-eP7" firstAttribute="trailing" secondItem="fcu-O8-645" secondAttribute="trailing" constant="20" id="JH8-XS-oEu"/>
-                            <constraint firstItem="fcu-O8-645" firstAttribute="top" secondItem="R5n-Q2-eP7" secondAttribute="top" constant="20" id="MBq-Hj-O8W"/>
-                            <constraint firstItem="iuj-1L-Gic" firstAttribute="leading" secondItem="R5n-Q2-eP7" secondAttribute="leading" priority="750" constant="20" id="nbr-1n-Xaj"/>
+                            <constraint firstItem="RWE-Xd-ELg" firstAttribute="top" secondItem="R5n-Q2-eP7" secondAttribute="top" constant="20" id="14b-1e-3eh"/>
+                            <constraint firstItem="RWE-Xd-ELg" firstAttribute="leading" secondItem="R5n-Q2-eP7" secondAttribute="leading" id="6Yc-ZC-iVw"/>
+                            <constraint firstItem="R5n-Q2-eP7" firstAttribute="trailing" secondItem="RWE-Xd-ELg" secondAttribute="trailing" id="A5n-6m-j81"/>
+                            <constraint firstItem="iuj-1L-Gic" firstAttribute="leading" secondItem="R5n-Q2-eP7" secondAttribute="leading" constant="20" id="Eao-sp-047"/>
+                            <constraint firstItem="P34-oP-i5T" firstAttribute="leading" secondItem="iuj-1L-Gic" secondAttribute="leading" id="PMx-fC-e3e"/>
+                            <constraint firstItem="R5n-Q2-eP7" firstAttribute="trailing" secondItem="iuj-1L-Gic" secondAttribute="trailing" constant="20" id="QSD-q6-F1l"/>
+                            <constraint firstItem="P34-oP-i5T" firstAttribute="trailing" secondItem="iuj-1L-Gic" secondAttribute="trailing" id="SXd-jQ-dcl"/>
+                            <constraint firstItem="iuj-1L-Gic" firstAttribute="top" secondItem="RWE-Xd-ELg" secondAttribute="bottom" constant="25" id="VKl-MZ-tL6"/>
+                            <constraint firstItem="P34-oP-i5T" firstAttribute="top" secondItem="iuj-1L-Gic" secondAttribute="bottom" constant="16" id="gFF-S3-d2Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R5n-Q2-eP7"/>
                     </view>
@@ -210,6 +225,7 @@
                     <connections>
                         <outlet property="artworkImageView" destination="RWE-Xd-ELg" id="Knl-gh-YTk"/>
                         <outlet property="favoriteButton" destination="fcu-O8-645" id="nC9-yl-4qt"/>
+                        <outlet property="iTunesButton" destination="A0p-py-ug4" id="oqQ-e3-Ose"/>
                         <outlet property="subtitleLabel" destination="nnx-KR-Glf" id="VNv-RT-6n0"/>
                         <outlet property="titleLabel" destination="Oi6-1I-KAb" id="Xr0-pI-4cC"/>
                     </connections>
