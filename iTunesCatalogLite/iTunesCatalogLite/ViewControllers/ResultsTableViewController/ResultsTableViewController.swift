@@ -12,13 +12,8 @@ import iTunesCatalogLite_API
 class ResultsTableViewController: UITableViewController {
     static var storyboardID = "ResultsTableViewController"
 
-    var results = [iTunesSearchResult]()
-    var sections: [iTunesResultType] {
-        let orderedSet = NSOrderedSet(array: results.map({ $0.type }))
+    var searchResult = [iTunesResultType : [iTunesSearchResult]]()
 
-        return orderedSet.array as? [iTunesResultType] ?? []
-    }
-    
     @IBOutlet weak var resultsLabel: UILabel?
 
     override func viewDidLoad() {
@@ -41,23 +36,33 @@ class ResultsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return searchResult.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count
+        // get the current section based on the index of the dictionary
+        let sectionKey = searchResult.keys.compactMap({ $0 })[section]
+        guard let resultsForSection = searchResult[sectionKey] else {
+            return 0
+        }
+        return resultsForSection.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.reuseId, for: indexPath) as? ResultTableViewCell
-        cell?.configure(results[indexPath.row])
+
+        let sectionKey = searchResult.keys.compactMap({ $0 })[indexPath.section]
+        guard let resultsForSection = searchResult[sectionKey] else {
+            return UITableViewCell()
+        }
+
+        let result = resultsForSection[indexPath.row]
+        cell?.configure(result)
         return cell ?? UITableViewCell()
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title = sections[section].displayTitle
-
-        return title
+        return searchResult.keys.compactMap({ $0 })[section].displayTitle
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,8 +70,12 @@ class ResultsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedResult = results[indexPath.row]
-
+        let sectionKey = searchResult.keys.compactMap({ $0 })[indexPath.section]
+        guard let resultsForSection = searchResult[sectionKey] else {
+            return
+        }
+        
+        let selectedResult = resultsForSection[indexPath.row]
         let detailVC = DetailViewController.viewControllerForResult(selectedResult)
         self.present(detailVC, animated: true, completion: nil)
 

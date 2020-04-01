@@ -12,7 +12,7 @@ import iTunesCatalogLite_API
 class HomeViewController: UIViewController {
     // MARK: - Outlets
 
-    @IBOutlet weak var containerCollectionView: UICollectionView!
+    @IBOutlet weak var favoritesCollectionView: UICollectionView!
 
     // MARK: - Properties
 
@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
         setupViews()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         StorageManager.loadFavorites { [weak self] (results) in
             guard let self = self,
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
 
             DispatchQueue.main.async {
                 self.favorites = items
-                self.containerCollectionView.reloadData()
+                self.favoritesCollectionView.reloadData()
             }
 
         }
@@ -102,13 +102,13 @@ extension HomeViewController {
     func configureFavoritesCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 0
-        containerCollectionView.collectionViewLayout = flowLayout
+        favoritesCollectionView.collectionViewLayout = flowLayout
 
-        containerCollectionView.delegate = self
-        containerCollectionView.dataSource = self
+        favoritesCollectionView.delegate = self
+        favoritesCollectionView.dataSource = self
 
         let favoriteCellNib = UINib(nibName: "FavoriteCollectionViewCell", bundle: nil)
-        containerCollectionView.register(favoriteCellNib, forCellWithReuseIdentifier: FavoriteCollectionViewCell.cellId)
+        favoritesCollectionView.register(favoriteCellNib, forCellWithReuseIdentifier: FavoriteCollectionViewCell.cellId)
     }
 }
 

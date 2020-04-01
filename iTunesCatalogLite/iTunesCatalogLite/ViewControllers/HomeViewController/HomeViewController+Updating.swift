@@ -26,29 +26,43 @@ extension HomeViewController: UISearchResultsUpdating {
             guard let self = self else { return }
 
             switch result {
-            case .success(let searchResults):
-                DispatchQueue.main.async {
-                    self.handleSearchResults(searchResults)
-                }
-            case .failure(let error):
+            case .success(let data):
+                self.decodeData(data)
+            case .failure:
                 // TODO: Handle errors
                 DispatchQueue.main.async {
-                    self.handleSearchResults([])
+                    self.handleSearchResults([:])
                 }
             }
         }
     }
 
-    fileprivate func handleSearchResults(_ results: [iTunesSearchResult]) {
-        // sort based on the media type
-        let sortedResults = results.sorted { (firstItem, secondItem) -> Bool in
-            firstItem.type.rawValue > secondItem.type.rawValue
+    fileprivate func decodeData(_ data: (Data)) {
+        iTunesCatalogLiteManager.shared.decodeSearchResponse(from: data) { [weak self] (result) in
+            switch result {
+            case .success(let searchResults):
+                DispatchQueue.main.async {
+                    self?.handleSearchResults(searchResults)
+                }
+            case .failure:
+                // TODO: Handle errors
+                DispatchQueue.main.async {
+                    self?.handleSearchResults([:])
+                }
+            }
         }
+    }
 
+    fileprivate func handleSearchResults(_ results: ([iTunesResultType : [iTunesSearchResult]])) {
         if let resultsController = searchController.searchResultsController as? ResultsTableViewController {
-            resultsController.results = sortedResults
+            resultsController.searchResult = results
             resultsController.tableView.reloadData()
-            resultsController.resultsLabel?.text = resultsController.results.isEmpty ? "No results" : String(format: "Found %d results:", resultsController.results.count)
+
+            var resultCount = 0
+            for result in results {
+                resultCount += result.value.count
+            }
+            resultsController.resultsLabel?.text = resultCount == 0 ? "No results" : String(format: "Found %d results:", resultCount)
         }
     }
 

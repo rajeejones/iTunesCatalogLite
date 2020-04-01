@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,18 +24,8 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="usM-iP-gI9">
-                                        <rect key="frame" x="24" y="50" width="366" height="304"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FVX-OC-3Qi">
-                                            <rect key="frame" x="0.0" y="0.0" width="366" height="304"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="366" height="304"/>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GKk-Ai-MD5" customClass="FavoriteHeaderView" customModule="iTunesCatalogLite" customModuleProvider="target">
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeader" id="GKk-Ai-MD5" customClass="FavoriteHeaderView" customModule="iTunesCatalogLite" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -70,7 +59,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="iTunes Catalog" largeTitleDisplayMode="always" id="jpv-3a-YQk"/>
                     <connections>
-                        <outlet property="containerCollectionView" destination="nZj-BU-rfk" id="mlr-bi-Rqg"/>
+                        <outlet property="favoritesCollectionView" destination="nZj-BU-rfk" id="mlr-bi-Rqg"/>
                         <segue destination="3Kw-U0-1Hx" kind="presentation" identifier="showDetailSegue" id="aXz-Lg-1yK"/>
                     </connections>
                 </viewController>
@@ -104,16 +93,6 @@
                                 <constraint firstAttribute="trailing" secondItem="yOd-Hn-CGL" secondAttribute="trailing" constant="8" id="uVg-Wp-elC"/>
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9g9-RK-OKu">
-                                <rect key="frame" x="0.0" y="59" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9g9-RK-OKu" id="TdI-kO-zwE">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="KjC-yh-sq1" id="pHe-GB-8c0"/>
                             <outlet property="delegate" destination="KjC-yh-sq1" id="hkr-ke-AB0"/>
