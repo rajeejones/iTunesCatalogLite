@@ -9,6 +9,26 @@ jones.rajee@gmail.com
 - [x] The API that you build will take the iTunes Search API and sort each of the results into categories based on media type.
 - [x] The response of this API should be a JSON object, where each field are the different media types and inside each field is an array of objects
 - [x] Required fields: id, name, artwork, genre, url
+```
+{
+  "song": [{
+    "id": Integer, // trackId (ID of entity) 
+    "name": String, // name of entity 
+    "artwork": String, // URL of the artwork 
+    "genre": String, // Genre of entity
+    "url": String // trackViewUrl
+     },
+    ],
+   "feature-movie": [{
+     "id": Integer, // trackId (ID of entity) 
+     "name": String, // name of entity 
+     "artwork": String, // URL of the artwork 
+     "genre": String, // Genre of entity
+     "url": String // trackViewUrl
+     },
+     ]
+}
+```
 - [x] Build a view that allows a user to type in a search query and will display the results on the page
 - [x] The results should be split into different sections based on the ‘kind’ of entity
 - [x] If a certain “kind” section doesn’t have any entries, do not show that section
