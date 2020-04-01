@@ -30,9 +30,7 @@ extension HomeViewController: UISearchResultsUpdating {
                 self.decodeData(data)
             case .failure:
                 // TODO: Handle errors
-                DispatchQueue.main.async {
-                    self.handleSearchResults([:])
-                }
+                break
             }
         }
     }
@@ -46,9 +44,7 @@ extension HomeViewController: UISearchResultsUpdating {
                 }
             case .failure:
                 // TODO: Handle errors
-                DispatchQueue.main.async {
-                    self?.handleSearchResults([:])
-                }
+                break
             }
         }
     }
@@ -67,5 +63,3 @@ extension HomeViewController: UISearchResultsUpdating {
     }
 
 }
-
-

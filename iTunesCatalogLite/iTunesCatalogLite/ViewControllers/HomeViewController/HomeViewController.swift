@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
 
     var searchController: UISearchController = UISearchController()
     var resultsTableViewController: ResultsTableViewController = ResultsTableViewController()
-    //var restoredState = SearchControllerRestorableState()
+    var restoredState = SearchControllerRestorableState()
     var favorites: [iTunesSearchResult] = []
     var selectedItem: iTunesSearchResult? = nil
 
@@ -53,6 +53,21 @@ class HomeViewController: UIViewController {
                 self.favoritesCollectionView.reloadData()
             }
 
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Restore the searchController's active state.
+        if restoredState.wasActive {
+            searchController.isActive = restoredState.wasActive
+            restoredState.wasActive = false
+
+            if restoredState.wasFirstResponder {
+                searchController.searchBar.becomeFirstResponder()
+                restoredState.wasFirstResponder = false
+            }
         }
     }
 
@@ -93,6 +108,7 @@ class HomeViewController: UIViewController {
 }
 
 // MARK: - View Helpers
+
 extension HomeViewController {
 
     func configureLargeTitles() {

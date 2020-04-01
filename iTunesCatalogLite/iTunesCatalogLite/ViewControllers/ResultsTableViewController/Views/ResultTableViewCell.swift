@@ -39,7 +39,9 @@ class ResultTableViewCell: UITableViewCell {
             self.genreLabel.text = result.genre
 
             DispatchQueue.global().async {
-                guard let imageUrl = URL(string: result.artwork),
+                guard
+                    let urlString = result.artwork,
+                    let imageUrl = URL(string: urlString),
                     let imageData = try? Data(contentsOf: imageUrl) else {
                         return
                 }

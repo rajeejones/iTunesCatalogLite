@@ -26,7 +26,9 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             self.itemNameLabel?.text = favoriteItem.name
             
             DispatchQueue.global().async {
-                guard let imageUrl = URL(string: favoriteItem.artwork),
+                guard
+                    let urlString = favoriteItem.artwork,
+                    let imageUrl = URL(string: urlString),
                     let imageData = try? Data(contentsOf: imageUrl) else {
                         return
                 }

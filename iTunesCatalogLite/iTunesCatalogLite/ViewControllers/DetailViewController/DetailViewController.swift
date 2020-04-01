@@ -36,7 +36,9 @@ class DetailViewController: UIViewController {
             }
             self.titleLabel.text = result.name
             self.subtitleLabel.text = result.genre
-            self.iTunesUrl = URL(string: result.url)
+            if let urlString = result.url {
+                self.iTunesUrl = URL(string:urlString )
+            }
             self.iTunesButton.isEnabled = self.iTunesUrl != nil
 
             DispatchQueue.global().async {
