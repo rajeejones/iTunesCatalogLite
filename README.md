@@ -5,10 +5,11 @@ Author: Rajee Jones 👋🏾
 jones.rajee@gmail.com
 
 ## Swift Packages
+I created my API as a Swift Package to add as a dependency, also as apart of this challenge. 🤭
 [Lightweight iTunes Catalog API](https://github.com/rajeejones/iTunesCatalogLite-API)
 
 ## Demo
-
+![Demo of iTunesChallenge](https://github.com/rajeejones/iTunesCatalogLite/blob/master/iTunesChallengeDemo.gif) 
 
 ## Challenge:
 - [x] Build an API that takes in a search term and uses that value to call the iTunes Search API.
@@ -21,3 +22,4 @@ jones.rajee@gmail.com
 - [x] Required data to be shown on the view: picture of the artwork, name, genre, link to iTunes
 - [x] Allow items to be marked as “favorites”
 - [x] These favorites can be a mix of different “kinds” of entities and should always be accessible on the page (even when no search has been entered)
+
