@@ -25,6 +25,12 @@
 		C8A05DCB2433EE9E00FD2345 /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A05DC82433EE9E00FD2345 /* FavoriteCollectionViewCell.xib */; };
 		C8A05DCC2433EE9E00FD2345 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A05DC92433EE9E00FD2345 /* FavoriteCollectionViewCell.swift */; };
 		C8A05DCE2433F00000FD2345 /* HomeViewController+Updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A05DCD2433F00000FD2345 /* HomeViewController+Updating.swift */; };
+		C8ADDE732440CBC8006E1A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADDE722440CBC8006E1A0B /* AppDelegate.swift */; };
+		C8ADDE752440CBC8006E1A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADDE742440CBC8006E1A0B /* ContentView.swift */; };
+		C8ADDE772440CBCA006E1A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ADDE762440CBCA006E1A0B /* Assets.xcassets */; };
+		C8ADDE7A2440CBCA006E1A0B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ADDE792440CBCA006E1A0B /* Preview Assets.xcassets */; };
+		C8ADDE7D2440CBCA006E1A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ADDE7B2440CBCA006E1A0B /* LaunchScreen.storyboard */; };
+		C8ADDE882440CBCA006E1A0B /* iTunesCatalogTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADDE872440CBCA006E1A0B /* iTunesCatalogTVTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C8A05D8D2433E7F700FD2345;
 			remoteInfo = iTunesCatalogLite;
+		};
+		C8ADDE842440CBCA006E1A0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8A05D862433E7F700FD2345 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8ADDE6F2440CBC8006E1A0B;
+			remoteInfo = iTunesCatalogTV;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -59,6 +72,16 @@
 		C8A05DC82433EE9E00FD2345 /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8A05DC92433EE9E00FD2345 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8A05DCD2433F00000FD2345 /* HomeViewController+Updating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Updating.swift"; sourceTree = "<group>"; };
+		C8ADDE702440CBC8006E1A0B /* iTunesCatalogTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesCatalogTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8ADDE722440CBC8006E1A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8ADDE742440CBC8006E1A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C8ADDE762440CBCA006E1A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8ADDE792440CBCA006E1A0B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C8ADDE7C2440CBCA006E1A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8ADDE7E2440CBCA006E1A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8ADDE832440CBCA006E1A0B /* iTunesCatalogTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesCatalogTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8ADDE872440CBCA006E1A0B /* iTunesCatalogTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesCatalogTVTests.swift; sourceTree = "<group>"; };
+		C8ADDE892440CBCA006E1A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +100,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C8ADDE6D2440CBC8006E1A0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8ADDE802440CBCA006E1A0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +122,8 @@
 			children = (
 				C8A05D902433E7F700FD2345 /* iTunesCatalogLite */,
 				C8A05DA72433E7FA00FD2345 /* iTunesCatalogLiteTests */,
+				C8ADDE712440CBC8006E1A0B /* iTunesCatalogTV */,
+				C8ADDE862440CBCA006E1A0B /* iTunesCatalogTVTests */,
 				C8A05D8F2433E7F700FD2345 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +133,8 @@
 			children = (
 				C8A05D8E2433E7F700FD2345 /* iTunesCatalogLite.app */,
 				C8A05DA42433E7FA00FD2345 /* iTunesCatalogLiteTests.xctest */,
+				C8ADDE702440CBC8006E1A0B /* iTunesCatalogTV.app */,
+				C8ADDE832440CBCA006E1A0B /* iTunesCatalogTVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,6 +228,36 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C8ADDE712440CBC8006E1A0B /* iTunesCatalogTV */ = {
+			isa = PBXGroup;
+			children = (
+				C8ADDE722440CBC8006E1A0B /* AppDelegate.swift */,
+				C8ADDE742440CBC8006E1A0B /* ContentView.swift */,
+				C8ADDE762440CBCA006E1A0B /* Assets.xcassets */,
+				C8ADDE7B2440CBCA006E1A0B /* LaunchScreen.storyboard */,
+				C8ADDE7E2440CBCA006E1A0B /* Info.plist */,
+				C8ADDE782440CBCA006E1A0B /* Preview Content */,
+			);
+			path = iTunesCatalogTV;
+			sourceTree = "<group>";
+		};
+		C8ADDE782440CBCA006E1A0B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C8ADDE792440CBCA006E1A0B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C8ADDE862440CBCA006E1A0B /* iTunesCatalogTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				C8ADDE872440CBCA006E1A0B /* iTunesCatalogTVTests.swift */,
+				C8ADDE892440CBCA006E1A0B /* Info.plist */,
+			);
+			path = iTunesCatalogTVTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +299,41 @@
 			productReference = C8A05DA42433E7FA00FD2345 /* iTunesCatalogLiteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C8ADDE6F2440CBC8006E1A0B /* iTunesCatalogTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8ADDE8E2440CBCA006E1A0B /* Build configuration list for PBXNativeTarget "iTunesCatalogTV" */;
+			buildPhases = (
+				C8ADDE6C2440CBC8006E1A0B /* Sources */,
+				C8ADDE6D2440CBC8006E1A0B /* Frameworks */,
+				C8ADDE6E2440CBC8006E1A0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTunesCatalogTV;
+			productName = iTunesCatalogTV;
+			productReference = C8ADDE702440CBC8006E1A0B /* iTunesCatalogTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C8ADDE822440CBCA006E1A0B /* iTunesCatalogTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8ADDE8F2440CBCA006E1A0B /* Build configuration list for PBXNativeTarget "iTunesCatalogTVTests" */;
+			buildPhases = (
+				C8ADDE7F2440CBCA006E1A0B /* Sources */,
+				C8ADDE802440CBCA006E1A0B /* Frameworks */,
+				C8ADDE812440CBCA006E1A0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8ADDE852440CBCA006E1A0B /* PBXTargetDependency */,
+			);
+			name = iTunesCatalogTVTests;
+			productName = iTunesCatalogTVTests;
+			productReference = C8ADDE832440CBCA006E1A0B /* iTunesCatalogTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,6 +350,13 @@
 					C8A05DA32433E7FA00FD2345 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = C8A05D8D2433E7F700FD2345;
+					};
+					C8ADDE6F2440CBC8006E1A0B = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					C8ADDE822440CBCA006E1A0B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = C8ADDE6F2440CBC8006E1A0B;
 					};
 				};
 			};
@@ -265,6 +378,8 @@
 			targets = (
 				C8A05D8D2433E7F700FD2345 /* iTunesCatalogLite */,
 				C8A05DA32433E7FA00FD2345 /* iTunesCatalogLiteTests */,
+				C8ADDE6F2440CBC8006E1A0B /* iTunesCatalogTV */,
+				C8ADDE822440CBCA006E1A0B /* iTunesCatalogTVTests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +398,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C8A05DA22433E7FA00FD2345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8ADDE6E2440CBC8006E1A0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8ADDE7D2440CBCA006E1A0B /* LaunchScreen.storyboard in Resources */,
+				C8ADDE7A2440CBCA006E1A0B /* Preview Assets.xcassets in Resources */,
+				C8ADDE772440CBCA006E1A0B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8ADDE812440CBCA006E1A0B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -318,6 +450,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C8ADDE6C2440CBC8006E1A0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8ADDE752440CBC8006E1A0B /* ContentView.swift in Sources */,
+				C8ADDE732440CBC8006E1A0B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8ADDE7F2440CBCA006E1A0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8ADDE882440CBCA006E1A0B /* iTunesCatalogTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -326,6 +475,11 @@
 			target = C8A05D8D2433E7F700FD2345 /* iTunesCatalogLite */;
 			targetProxy = C8A05DA52433E7FA00FD2345 /* PBXContainerItemProxy */;
 		};
+		C8ADDE852440CBCA006E1A0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8ADDE6F2440CBC8006E1A0B /* iTunesCatalogTV */;
+			targetProxy = C8ADDE842440CBCA006E1A0B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -333,6 +487,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				C8A05D9D2433E7FA00FD2345 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C8ADDE7B2440CBCA006E1A0B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8ADDE7C2440CBCA006E1A0B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -534,6 +696,96 @@
 			};
 			name = Release;
 		};
+		C8ADDE8A2440CBCA006E1A0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iTunesCatalogTV/Preview Content\"";
+				DEVELOPMENT_TEAM = X3D8R87M2B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iTunesCatalogTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oms.iTunesCatalogTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		C8ADDE8B2440CBCA006E1A0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iTunesCatalogTV/Preview Content\"";
+				DEVELOPMENT_TEAM = X3D8R87M2B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iTunesCatalogTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oms.iTunesCatalogTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
+		C8ADDE8C2440CBCA006E1A0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X3D8R87M2B;
+				INFOPLIST_FILE = iTunesCatalogTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oms.iTunesCatalogTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunesCatalogTV.app/iTunesCatalogTV";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		C8ADDE8D2440CBCA006E1A0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X3D8R87M2B;
+				INFOPLIST_FILE = iTunesCatalogTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oms.iTunesCatalogTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunesCatalogTV.app/iTunesCatalogTV";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -564,6 +816,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C8ADDE8E2440CBCA006E1A0B /* Build configuration list for PBXNativeTarget "iTunesCatalogTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8ADDE8A2440CBCA006E1A0B /* Debug */,
+				C8ADDE8B2440CBCA006E1A0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8ADDE8F2440CBCA006E1A0B /* Build configuration list for PBXNativeTarget "iTunesCatalogTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8ADDE8C2440CBCA006E1A0B /* Debug */,
+				C8ADDE8D2440CBCA006E1A0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -572,7 +842,7 @@
 			repositoryURL = "https://github.com/rajeejones/iTunesCatalogLite-API";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 3.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
