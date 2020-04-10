@@ -31,6 +31,7 @@
 		C8ADDE7A2440CBCA006E1A0B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ADDE792440CBCA006E1A0B /* Preview Assets.xcassets */; };
 		C8ADDE7D2440CBCA006E1A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ADDE7B2440CBCA006E1A0B /* LaunchScreen.storyboard */; };
 		C8ADDE882440CBCA006E1A0B /* iTunesCatalogTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADDE872440CBCA006E1A0B /* iTunesCatalogTVTests.swift */; };
+		C8B58AFB2440FAEF00927EB5 /* iTunesCatalogLite-API in Frameworks */ = {isa = PBXBuildFile; productRef = C8B58AFA2440FAEF00927EB5 /* iTunesCatalogLite-API */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B58AFB2440FAEF00927EB5 /* iTunesCatalogLite-API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +127,7 @@
 				C8ADDE712440CBC8006E1A0B /* iTunesCatalogTV */,
 				C8ADDE862440CBCA006E1A0B /* iTunesCatalogTVTests */,
 				C8A05D8F2433E7F700FD2345 /* Products */,
+				C8B58AF92440FAEF00927EB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,6 +261,13 @@
 			path = iTunesCatalogTVTests;
 			sourceTree = "<group>";
 		};
+		C8B58AF92440FAEF00927EB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +322,9 @@
 			dependencies = (
 			);
 			name = iTunesCatalogTV;
+			packageProductDependencies = (
+				C8B58AFA2440FAEF00927EB5 /* iTunesCatalogLite-API */,
+			);
 			productName = iTunesCatalogTV;
 			productReference = C8ADDE702440CBC8006E1A0B /* iTunesCatalogTV.app */;
 			productType = "com.apple.product-type.application";
@@ -849,6 +862,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		C8A05DB42433E86C00FD2345 /* iTunesCatalogLite-API */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8A05DB32433E86C00FD2345 /* XCRemoteSwiftPackageReference "iTunesCatalogLite-API" */;
+			productName = "iTunesCatalogLite-API";
+		};
+		C8B58AFA2440FAEF00927EB5 /* iTunesCatalogLite-API */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C8A05DB32433E86C00FD2345 /* XCRemoteSwiftPackageReference "iTunesCatalogLite-API" */;
 			productName = "iTunesCatalogLite-API";
